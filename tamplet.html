@@ -11,231 +11,348 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-         /* Spider-Man Style Navbar */
-    .navbar.spiderman {
-      background: linear-gradient(to right, #c70039, #001f3f);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-    }
+        /* Spider-Man Style Navbar */
+        .navbar.spiderman {
+            background: linear-gradient(to right, #c70039, #001f3f);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
 
-    .navbar.spiderman .navbar-brand {
-      font-family: 'Impact', sans-serif;
-      color: white;
-      font-size: 28px;
-      letter-spacing: 2px;
-    }
+        .navbar.spiderman .navbar-brand {
+            font-family: 'Impact', sans-serif;
+            color: white;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
 
-    .navbar.spiderman .nav-link {
-      color: #fff;
-      transition: 0.3s;
-    }
+        .navbar.spiderman .nav-link {
+            color: #fff;
+            transition: 0.3s;
+        }
 
-    .navbar.spiderman .nav-link:hover {
-      color: #ffcc00;
-      text-shadow: 0 0 5px #fff200;
-    }
+        .navbar.spiderman .nav-link:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 5px #fff200;
+        }
 
-    .navbar.spiderman .btn-outline-light {
-      border-color: #fff;
-      color: #fff;
-    }
+        .navbar.spiderman .btn-outline-light {
+            border-color: #fff;
+            color: #fff;
+        }
 
-    .navbar.spiderman .btn-danger {
-      background-color: #c70039;
-      border-color: #c70039;
-    }
+        .navbar.spiderman .btn-danger {
+            background-color: #c70039;
+            border-color: #c70039;
+        }
 
-    /* Hero Section Spider Style */
-    .hero-section {
-      background: url('https://www.transparenttextures.com/patterns/web.png'),
-        linear-gradient(to right, rgba(0,0,0,0.9), rgba(199, 0, 57, 0.6));
-      background-size: cover;
-      padding: 100px 0;
-      text-align: center;
-      color: #fff;
-    }
+        /* Main Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
 
-    .hero-title {
-      font-family: 'Arial Black', sans-serif;
-      font-size: 3rem;
-      color: #ffcc00;
-      text-shadow: 0 0 5px #c70039;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: #ffffffcc;
-      margin-bottom: 30px;
-    }
-
-    .form-control-lg {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-         body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-
-    .hero-section {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(139, 0, 0, 0.6)), 
-                  url('https://source.unsplash.com/1920x1080/?cinema,netflix') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-content {
-      z-index: 2;
-      max-width: 650px;
-      animation: fadeInUp 1.5s ease;
-    }
-
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: #e50914;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: #ffffffcc;
-      margin-bottom: 2rem;
-    }
-
-    .search-box .form-control {
-      border-radius: 0;
-    }
-
-    .search-box .btn {
-      background-color: #e50914;
-      border: none;
-      transition: 0.3s ease;
-    }
-
-    .search-box .btn:hover {
-      background-color: #b00610;
-    }
-
-    /* Text Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Blur overlay for readability */
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2rem;
-      }
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-    }
         :root {
             --primary-color: #0d6efd;
             --dark-color: #1a1a2e;
             --light-color: #f8f9fa;
             --accent-color: #ff4d4d;
         }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        
-        .navbar {
-            background-color: var(--dark-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--accent-color);
-        }
-        
+
+        /* Hero Section Styles */
         .hero-section {
-    background: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.95) 20%, rgba(139, 0, 0, 0.6) 100%),
-        url('https://source.unsplash.com/1920x1080/?cinema,netflix') no-repeat center center;
-    background-size: cover;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    color: white;
-    position: relative;
-}
-.hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-}
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+            gap: 60px;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(139, 0, 0, 0.6)), 
+                        url('https://source.unsplash.com/1920x1080/?cinema,netflix') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(3px);
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
 
-
-        
         .hero-content {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
             z-index: 2;
         }
-        
+
         .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #ffcc00;
+            text-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+            margin-bottom: 25px;
         }
-        
+
         .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            font-size: 1.3rem;
+            color: #eeeeeecc;
+            margin-bottom: 30px;
+            line-height: 1.7;
         }
-        
-        .search-box {
-            background: rgba(255, 255, 255, 0.2);
+
+        /* Slider styles */
+        .hero-slider {
+            flex: 1;
+            min-width: 320px;
+            max-width: 900px;
+            overflow: hidden;
+            position: relative;
+            perspective: 1500px;
+            z-index: 2;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            gap: 24px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slider-card {
+            position: relative;
+            width: 220px;
+            height: 330px;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 40px rgba(255, 204, 0, 0.3);
+            transition: transform 0.8s ease, box-shadow 0.5s ease;
+            overflow: hidden;
+        }
+
+        .slider-card:hover {
+            transform: scale(1.07) rotateY(10deg);
+            box-shadow: 0 25px 60px rgba(255, 204, 0, 0.6);
+        }
+
+        .slider-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+            color: #fff;
+            padding: 15px;
+        }
+
+        .movie-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .movie-rating {
+            font-size: 0.9rem;
+            color: #ffcc00;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: rgba(30, 30, 30, 0.8);
+            padding: 30px;
+            border-radius: 16px;
             backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 2rem;
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.1);
+            color: #fff;
+            margin-bottom: 40px;
         }
-        
+
+        .filter-title {
+            font-weight: 600;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        .form-select, .form-control {
+            background-color: rgba(34, 34, 34, 0.7);
+            color: #ffcc00;
+            border: 1px solid #444;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            padding: 12px 15px;
+        }
+
+        .form-select:hover, .form-control:hover,
+        .form-select:focus, .form-control:focus {
+            border-color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+            background-color: rgba(40, 40, 40, 0.9);
+            outline: none;
+        }
+
+        .form-select option {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Movie Card Styles */
+        .movie-card {
+            background: #141414;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .movie-poster {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+            border-bottom: 2px solid #e50914;
+        }
+
+        .movie-info {
+            padding: 15px;
+            background-color: #1c1c1c;
+        }
+
+        .movie-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #b3b3b3;
+        }
+
+        .movie-rating {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        .badge-genre {
+            background-color: var(--primary-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Movie Slideshow */
+        .movie-slideshow {
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0;
+            background-color: var(--dark-color);
+        }
+
+        .slider-controls {
+            display: flex;
+        }
+
+        .slider-controls .btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .slider-controls .btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .movie-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+        }
+
+        .movie-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .movie-slider::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .movie-slider::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+
+        .movie-slide {
+            flex: 0 0 auto;
+            width: 250px;
+            scroll-snap-align: start;
+        }
+
+        .movie-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .movie-slide .movie-card:hover .movie-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-play:hover {
+            background: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        /* Section Titles */
         .section-title {
             font-weight: 700;
             margin-bottom: 2rem;
             position: relative;
             display: inline-block;
+            color: white;
         }
-        
+
         .section-title:after {
             content: '';
             position: absolute;
@@ -245,127 +362,98 @@
             height: 3px;
             background: var(--accent-color);
         }
-        
-        .movie-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 1.5rem;
-        }
-        
-        .movie-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .movie-poster {
-            height: 300px;
-            object-fit: cover;
-            width: 100%;
-        }
-        
-        .movie-info {
-            padding: 1.5rem;
-        }
-        
-        .movie-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .movie-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .movie-rating {
-            color: #ffc107;
-            font-weight: 600;
-        }
-        
-        .badge-genre {
-            background-color: var(--primary-color);
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        
-        .btn-watch {
-            background-color: var(--accent-color);
-            color: white;
-            font-weight: 500;
-            width: 100%;
-            border: none;
-        }
-        
-        .btn-watch:hover {
-            background-color: #e04444;
-            color: white;
-        }
-        
-        .filter-section {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-        }
-        
-        .filter-title {
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
+
+        /* Footer Styles */
         .footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-links h5 {
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            padding: 4rem 0 0;
             position: relative;
         }
-        
-        .footer-links h5:after {
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-text {
+            color: #adb5bd;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -10px;
+            bottom: 0;
             width: 40px;
             height: 2px;
-            background: var(--accent-color);
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
         }
-        
-        .footer-links ul {
+
+        .footer-heading:hover::after {
+            width: 60px;
+        }
+
+        .footer-menu {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
+            margin: 0;
         }
-        
-        .footer-links li {
+
+        .footer-menu li {
             margin-bottom: 0.8rem;
         }
-        
-        .footer-links a {
+
+        .footer-link {
             color: #adb5bd;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
-        
-        .footer-links a:hover {
-            color: white;
+
+        .footer-link:hover {
+            color: #f39c12 !important;
             text-decoration: underline;
+            transform: translateX(5px);
         }
-        
-        .social-icons a {
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -373,16 +461,62 @@
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            margin-right: 10px;
-            color: white;
-            transition: all 0.3s;
+            color: #fff;
+            transition: all 0.3s ease;
         }
-        
-        .social-icons a:hover {
+
+        .social-link:hover {
             background-color: var(--accent-color);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
         }
-        
+
+        .newsletter-form .input-group {
+            margin-top: 1rem;
+        }
+
+        .newsletter-form .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25);
+        }
+
+        .newsletter-form .form-control::placeholder {
+            color: #adb5bd;
+        }
+
+        .newsletter-form .btn {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form .btn:hover {
+            background-color: #e04444;
+            border-color: #e04444;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .copyright-text {
+            color: #adb5bd;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -397,659 +531,438 @@
             justify-content: center;
             cursor: pointer;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
             z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        
+
         .back-to-top.show {
             opacity: 1;
         }
-        
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                padding: 50px 30px;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
                 font-size: 1rem;
             }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .movie-slide {
+                width: 200px;
+            }
         }
     </style>
-    <style>
-  .hero-section {
-    background: url('https://www.transparenttextures.com/patterns/web.png'),
-      linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(199, 0, 57, 0.6));
-    background-size: cover;
-    padding: 100px 0 150px;
-    text-align: center;
-    color: #fff;
-    perspective: 1000px;
-    position: relative;
-  }
-
-  .hero-content {
-    transform: rotateX(3deg);
-    transition: transform 0.3s ease;
-  }
-
-  .hero-title {
-    font-family: 'Arial Black', sans-serif;
-    font-size: 3rem;
-    color: #ffcc00;
-    text-shadow: 0 0 5px #c70039;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-    color: #ffffffcc;
-    margin-bottom: 40px;
-  }
-
-  .search-container {
-    background-color: #000000bb;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    transform: translateY(50px) rotateX(10deg);
-  }
-
-  .form-control-lg {
-    font-size: 1.2rem;
-  }
-
-  .navbar-brand {
-    font-size: 26px;
-  }
-</style>
-<style>
-    .hero-slider {
-  perspective: 1200px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slider-wrapper {
-  display: flex;
-  gap: 20px;
-  transform-style: preserve-3d;
-  animation: slideIn 5s infinite ease-in-out;
-}
-
-.slider-card {
-  width: 220px;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  transition: transform 0.8s ease, box-shadow 0.5s ease;
-  transform-origin: center;
-}
-
-.slider-card:hover {
-  transform: rotateY(10deg) scale(1.05);
-  box-shadow: 0 20px 45px rgba(255, 255, 0, 0.4);
-}
-
-@keyframes slideIn {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-30px) rotateY(5deg);
-  }
-}
-
-</style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top spiderman">
         <div class="container">
-          <a class="navbar-brand" href="#">🎬 CineVerse</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#a">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#b">Movies</a></li>
-              <li class="nav-item"><a class="nav-link" href="#b">TV Shows</a></li>
-              <li class="nav-item"><a class="nav-link" href="#b">Genres</a></li>
-            </ul>
-            <div class="ms-3 d-flex">
-              <button class="btn btn-outline-light me-2">Login</button>
-              <button class="btn btn-danger">Sign Up</button>
+            <a class="navbar-brand" href="#">🎬 CineVerse</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#a">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#b">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#b">TV Shows</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#b">Genres</a></li>
+                </ul>
+                <div class="ms-3 d-flex">
+                    <button class="btn btn-outline-light me-2">Login</button>
+                    <button class="btn btn-danger">Sign Up</button>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
-    
-      <!-- Hero Section -->
-      <style>
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-    
-        body {
-          font-family: 'Poppins', sans-serif;
-          background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-          color: #fff;
-          overflow-x: hidden;
-          min-height: 100vh;
-        }
-    
-        .hero-section {
-          width: 100%;
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 60px 60px;
-          gap: 60px;
-          flex-wrap: wrap;
-        }
-    
-        .hero-content {
-          flex: 1;
-          min-width: 320px;
-          max-width: 500px;
-          z-index: 2;
-        }
-    
-        .hero-title {
-          font-size: 3.8rem;
-          font-weight: 800;
-          color: #ffcc00;
-          text-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
-          margin-bottom: 25px;
-        }
-    
-        .hero-subtitle {
-          font-size: 1.3rem;
-          color: #eeeeeecc;
-          margin-bottom: 30px;
-          line-height: 1.7;
-        }
-    
-        .form-control-lg {
-          padding: 16px 22px;
-          font-size: 1.1rem;
-          border-radius: 12px;
-          border: none;
-          outline: none;
-          width: 100%;
-          background-color: #1e1e1e;
-          color: #ffcc00;
-          box-shadow: 0 0 12px #ffcc0055;
-        }
-    
-        .form-control-lg::placeholder {
-          color: #ffcc00aa;
-        }
-    
-        /* Slider styles */
-        .hero-slider {
-          flex: 1;
-          min-width: 320px;
-          max-width: 900px;
-          overflow: hidden;
-          position: relative;
-          perspective: 1500px;
-        }
-    
-        .slider-wrapper {
-          display: flex;
-          gap: 24px;
-          transform-style: preserve-3d;
-          transition: transform 1s ease-in-out;
-        }
-    
-        .slider-card {
-          position: relative;
-          width: 220px;
-          height: 330px;
-          border-radius: 20px;
-          background-size: cover;
-          background-position: center;
-          box-shadow: 0 20px 40px rgba(255, 204, 0, 0.3);
-          transition: transform 0.8s ease, box-shadow 0.5s ease;
-          overflow: hidden;
-        }
-    
-        .slider-card:hover {
-          transform: scale(1.07) rotateY(10deg);
-          box-shadow: 0 25px 60px rgba(255, 204, 0, 0.6);
-        }
-    
-        .slider-info {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-          color: #fff;
-          padding: 15px;
-        }
-    
-        .movie-title {
-          font-weight: 700;
-          font-size: 1.1rem;
-        }
-    
-        .movie-rating {
-          font-size: 0.9rem;
-          color: #ffcc00;
-        }
-    
-        @media (max-width: 992px) {
-          .hero-section {
-            flex-direction: column;
-            padding: 50px 30px;
-          }
-    
-          .hero-title {
-            font-size: 2.8rem;
-          }
-        }
-      </style>
-      
-      <section class="hero-section" id="a">
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="a">
         <!-- Left Content -->
         <div class="hero-content">
-          <h1 class="hero-title">Discover Your Next Favorite Movie</h1>
-          <p class="hero-subtitle">
-            Browse thousands of movies and TV shows, track what you've watched, and get personalized recommendations.
-          </p>
+            <h1 class="hero-title">Discover Your Next Favorite Movie</h1>
+            <p class="hero-subtitle">
+                Browse thousands of movies and TV shows, track what you've watched, and get personalized recommendations.
+            </p>
         </div>
-    
+
         <!-- Right Slider -->
         <div class="hero-slider">
-          <div class="slider-wrapper" id="sliderWrapper">
-            <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/tfFBEkcTFSSJkFqNqZgzC0ur4nA.jpg');">
-              <div class="slider-info">
-                <div class="movie-title">Dune: Part Two</div>
-                <div class="movie-rating">⭐ 8.6</div>
-              </div>
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/tfFBEkcTFSSJkFqNqZgzC0ur4nA.jpg');">
+                    <div class="slider-info">
+                        <div class="movie-title">Dune: Part Two</div>
+                        <div class="movie-rating">⭐ 8.6</div>
+                    </div>
+                </div>
+                <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg');">
+                    <div class="slider-info">
+                        <div class="movie-title">Spider-Verse</div>
+                        <div class="movie-rating">⭐ 8.7</div>
+                    </div>
+                </div>
+                <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg');">
+                    <div class="slider-info">
+                        <div class="movie-title">Oppenheimer</div>
+                        <div class="movie-rating">⭐ 9.0</div>
+                    </div>
+                </div>
+                <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg');">
+                    <div class="slider-info">
+                        <div class="movie-title">John Wick 4</div>
+                        <div class="movie-rating">⭐ 8.2</div>
+                    </div>
+                </div>
+                <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg');">
+                    <div class="slider-info">
+                        <div class="movie-title">Avatar 2</div>
+                        <div class="movie-rating">⭐ 7.8</div>
+                    </div>
+                </div>
             </div>
-            <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg');">
-              <div class="slider-info">
-                <div class="movie-title">Spider-Verse</div>
-                <div class="movie-rating">⭐ 8.7</div>
-              </div>
-            </div>
-            <div class="slider-card" style="background-image: url('../2793170.jpg');">
-              <div class="slider-info">
-                <div class="movie-title">Oppenheimer</div>
-                <div class="movie-rating">⭐ 9.0</div>
-              </div>
-            </div>
-            <div class="slider-card" style="background-image: url('https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg');">
-              <div class="slider-info">
-                <div class="movie-title">John Wick 4</div>
-                <div class="movie-rating">⭐ 8.2</div>
-              </div>
-            </div>
-            <div class="slider-card" style="background-image: url('../artworks-N1ywEMgaPtE8xS8p-Lnun2A-t500x500.jpg');">
-              <div class="slider-info">
-                <div class="movie-title">Avatar 2</div>
-                <div class="movie-rating">⭐ 7.8</div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-    
-      <script id="b">
+    </section>
+
+    <script>
         const sliderWrapper = document.getElementById('sliderWrapper');
         let scrollAmount = 0;
         let direction = 1;
-    
+
         setInterval(() => {
-          scrollAmount += 1 * direction;
-          if (scrollAmount > 20 || scrollAmount < -20) direction *= -1;
-          sliderWrapper.style.transform = `translateX(${scrollAmount}px) rotateY(${scrollAmount * 0.3}deg)`;
+            scrollAmount += 1 * direction;
+            if (scrollAmount > 20 || scrollAmount < -20) direction *= -1;
+            sliderWrapper.style.transform = `translateX(${scrollAmount}px) rotateY(${scrollAmount * 0.3}deg)`;
         }, 60);
-      </script>
-      <!-- Main Content -->
-      <div class="container py-5">
-    
+    </script>
+
+    <!-- Main Content -->
+    <div class="container py-5" id="b">
         <!-- Filter Section -->
-       <!-- ✅ CSS Styling -->
-<style>
-    .filter-section {
-      background: rgba(30, 30, 30, 0.8);
-      padding: 30px;
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(255, 204, 0, 0.1);
-      color: #fff;
-      margin-bottom: 40px;
-    }
-  
-    .filter-title {
-      font-weight: 600;
-      color: #ffcc00;
-      margin-bottom: 10px;
-    }
-  
-    .form-select,
-    .form-control {
-      background-color: transparent;
-      color: #ffcc00;
-      border: 1px solid #555;
-      border-radius: 10px;
-      transition: 0.3s ease-in-out;
-      box-shadow: inset 0 0 0 transparent;
-    }
-  
-    .form-control::placeholder {
-      color: #ffcc00aa;
-    }
-  
-    .form-select:hover,
-    .form-control:hover,
-    .form-select:focus,
-    .form-control:focus {
-      border-color: #ffcc00;
-      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
-      outline: none;
-    }
-  
-    .form-select option {
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-  </style>
-  
-  <!-- ✅ HTML Search & Filters -->
-  <div class="filter-section">
-    <div class="row">
-      <!-- Search Input -->
-      
-  
-      <!-- Genre Filter -->
-     <!-- Genre -->
-      <style>
-        .form-select {
-  background-color: rgba(34, 34, 34, 0.7);
-  color: #ffcc00;
-  border: 1px solid #444;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  padding: 12px 15px;
-}
+        <div class="filter-section">
+            <div class="row">
+                <!-- Search Input -->
+                <div class="col-md-6 mb-4">
+                    <h6 class="filter-title">🔍 Search Movies</h6>
+                    <input type="text" class="form-control form-control-lg" id="searchInput" placeholder="Search for movies...">
+                </div>
 
-.form-select:hover,
-.form-select:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
-  background-color: rgba(40, 40, 40, 0.9);
-  outline: none;
-}
+                <!-- Genre Filter -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h6 class="filter-title">🎬 Genre</h6>
+                    <select class="form-select form-select-lg" id="genreFilter">
+                        <option selected>All Genres</option>
+                        <option>Action</option>
+                        <option>Adventure</option>
+                        <option>Comedy</option>
+                        <option>Drama</option>
+                        <option>Horror</option>
+                        <option>Sci-Fi</option>
+                        <option>Thriller</option>
+                    </select>
+                </div>
+                
+                <!-- Year Filter -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h6 class="filter-title">📅 Year</h6>
+                    <select class="form-select form-select-lg" id="yearFilter">
+                        <option selected>All Years</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                        <option>2010-2019</option>
+                    </select>
+                </div>
+                
+                <!-- Rating Filter -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h6 class="filter-title">⭐ Rating</h6>
+                    <select class="form-select form-select-lg" id="ratingFilter">
+                        <option selected>All Ratings</option>
+                        <option>9+</option>
+                        <option>8+</option>
+                        <option>7+</option>
+                        <option>6+</option>
+                    </select>
+                </div>
+                
+                <!-- Sort Filter -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h6 class="filter-title">↕️ Sort By</h6>
+                    <select class="form-select form-select-lg" id="sortFilter">
+                        <option selected>Popularity</option>
+                        <option>Newest</option>
+                        <option>Highest Rated</option>
+                        <option>Alphabetical</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 
-.form-select option {
-  background-color: #1a1a1a;
-  color: #fff;
-}
-
-      </style>
-<div class="col-md-3 col-sm-6 mb-4">
-    <h6 class="filter-title">🎬 Genre</h6>
-    <select class="form-select form-select-lg" id="genreFilter">
-      <option selected>All Genres</option>
-      <option>Action</option>
-      <option>Adventure</option>
-      <option>Comedy</option>
-      <option>Drama</option>
-      <option>Horror</option>
-      <option>Sci-Fi</option>
-      <option>Thriller</option>
-    </select>
-  </div>
-  
-  <!-- Year -->
-  <div class="col-md-3 col-sm-6 mb-4">
-    <h6 class="filter-title">📅 Year</h6>
-    <select class="form-select form-select-lg" id="yearFilter">
-      <option selected>All Years</option>
-      <option>2024</option>
-      <option>2023</option>
-      <option>2022</option>
-      <option>2021</option>
-      <option>2010-2019</option>
-    </select>
-  </div>
-  
-  <!-- Rating -->
-  <div class="col-md-3 col-sm-6 mb-4">
-    <h6 class="filter-title">⭐ Rating</h6>
-    <select class="form-select form-select-lg" id="ratingFilter">
-      <option selected>All Ratings</option>
-      <option>9+</option>
-      <option>8+</option>
-      <option>7+</option>
-      <option>6+</option>
-    </select>
-  </div>
-  
-  <!-- Sort -->
-  <div class="col-md-3 col-sm-6 mb-4">
-    <h6 class="filter-title">↕️ Sort By</h6>
-    <select class="form-select form-select-lg" id="sortFilter">
-      <option selected>Popularity</option>
-      <option>Newest</option>
-      <option>Highest Rated</option>
-      <option>Alphabetical</option>
-    </select>
-  </div>
-  
-    </div>
-  </div>
-  
-  
-  
-          
-    
         <!-- Trending Movies -->
         <section class="mb-5">
-          <h2 class="section-title">Trending Now</h2>
-          <div class="row" id="trendingMovies">
-            <div class="col-md-3 movie-card" data-title="Inception">
-              <div class="card">
-                <img src="https://image.tmdb.org/t/p/w500/xyz.jpg" class="card-img-top" alt="Inception">
-                <div class="card-body">
-                  <h5 class="movie-title">Inception</h5>
-                  <p class="card-text">2010 • Sci-Fi • ⭐ 8.8</p>
-                </div>
-              </div>
+            <h2 class="section-title">Trending Now</h2>
+            <div class="row" id="trendingMovies">
+                <!-- Movies will be loaded here by JavaScript -->
             </div>
-    
-            <div class="col-md-3 movie-card" data-title="Avengers Endgame">
-              <div class="card">
-                <img src="https://image.tmdb.org/t/p/w500/abc.jpg" class="card-img-top" alt="Avengers Endgame">
-                <div class="card-body">
-                  <h5 class="movie-title">Avengers: Endgame</h5>
-                  <p class="card-text">2019 • Action • ⭐ 8.4</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
-    
+
         <!-- Popular Movies -->
         <section class="mb-5">
-          <h2 class="section-title">Popular Movies</h2>
-          <div class="row" id="popularMovies">
-            <div class="col-md-3 movie-card" data-title="Titanic">
-              <div class="card">
-                <img src="https://image.tmdb.org/t/p/w500/titanic.jpg" class="card-img-top" alt="Titanic">
-                <div class="card-body">
-                  <h5 class="movie-title">Titanic</h5>
-                  <p class="card-text">1997 • Drama • ⭐ 7.9</p>
-                </div>
-              </div>
+            <h2 class="section-title">Popular Movies</h2>
+            <div class="row" id="popularMovies">
+                <!-- Movies will be loaded here by JavaScript -->
             </div>
-          </div>
         </section>
-    
+
         <!-- Top Rated Movies -->
         <section class="mb-5">
             <h2 class="section-title">Top Rated</h2>
             <div class="row" id="topRatedMovies">
-              <div class="col-md-3 movie-card" data-title="The Godfather">
-                <div class="card netflix-card">
-                  <img src="https://image.tmdb.org/t/p/w500/godfather.jpg" class="card-img-top" alt="The Godfather">
-                  <div class="card-body">
-                    <h5 class="movie-title">The Godfather</h5>
-                    <p class="card-text">1972 • Crime • ⭐ 9.2</p>
-                  </div>
-                </div>
-              </div>
+                <!-- Movies will be loaded here by JavaScript -->
             </div>
-          </section>
-          
-      </div>
-    <style>
-        .netflix-card {
-  background-color: #141414; /* noir Netflix */
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+        </section>
+    </div>
 
-.netflix-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
-}
+    <!-- Now Playing Slideshow -->
+    <section class="movie-slideshow">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title text-white">Now Playing</h2>
+                <div class="slider-controls">
+                    <button class="btn btn-outline-light slider-prev me-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light slider-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
 
-.netflix-card img {
-  border-bottom: 2px solid #e50914; /* rouge Netflix */
-}
+            <div class="movie-slider">
+                <!-- Slide 1 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Dune" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Dune: Part Two</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 46m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-.netflix-card .card-body {
-  padding: 15px;
-  background-color: #1c1c1c;
-}
+                <!-- Slide 2 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Kung Fu Panda 4" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Kung Fu Panda 4</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">1h 34m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-.netflix-card .movie-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
+                <!-- Slide 3 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" alt="Godzilla x Kong" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Godzilla x Kong</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">1h 55m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-.netflix-card .card-text {
-  font-size: 0.95rem;
-  color: #b3b3b3;
-}
+                <!-- Slide 4 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg" alt="The Fall Guy" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">The Fall Guy</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 6m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    </style>
-      <!-- JS -->
-      <script>
-        const searchInput = document.getElementById("searchInput");
-    
-        searchInput.addEventListener("input", function () {
-          const searchTerm = this.value.toLowerCase();
-          const movieCards = document.querySelectorAll(".movie-card");
-    
-          movieCards.forEach(card => {
-            const title = card.getAttribute("data-title").toLowerCase();
-            if (title.includes(searchTerm)) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+                <!-- Slide 5 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/ySgY4jBvZ6qchrxKnBg4M8tZp8V.jpg" alt="Furiosa" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.8
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Furiosa</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 28m</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer bg-dark text-light pt-5 pb-4">
+    <footer class="footer">
         <div class="container">
-          <div class="row g-4">
-            
-            <!-- Brand Description -->
-            <div class="col-lg-4 col-md-6">
-              <h3 class="footer-brand text-primary fw-bold">🎬 CineVerse</h3>
-              <p class="footer-text">Explore a universe of cinema. Stream, track, and dive into the world’s best movies and series — all in one place.</p>
-              <div class="social-links mt-3">
-                <a href="#" class="social-link me-2 text-light"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link me-2 text-light"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link me-2 text-light"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link text-light"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-      
-            <!-- Navigation Links -->
-            <div class="col-lg-2 col-md-6">
-              <h5 class="footer-heading">Explore</h5>
-              <ul class="list-unstyled footer-menu">
-                <li><a href="#" class="footer-link text-light">Home</a></li>
-                <li><a href="#" class="footer-link text-light">Movies</a></li>
-                <li><a href="#" class="footer-link text-light">TV Shows</a></li>
-                <li><a href="#" class="footer-link text-light">Trending</a></li>
-                <li><a href="#" class="footer-link text-light">Top Rated</a></li>
-              </ul>
-            </div>
-      
-            <!-- Help & Resources -->
-            <div class="col-lg-2 col-md-6">
-              <h5 class="footer-heading">Support</h5>
-              <ul class="list-unstyled footer-menu">
-                <li><a href="#" class="footer-link text-light">Help Center</a></li>
-                <li><a href="#" class="footer-link text-light">Account</a></li>
-                <li><a href="#" class="footer-link text-light">Privacy Policy</a></li>
-                <li><a href="#" class="footer-link text-light">Terms of Use</a></li>
-              </ul>
-            </div>
-      
-            <!-- Newsletter -->
-            <div class="col-lg-4 col-md-6">
-              <h5 class="footer-heading">Get Updates</h5>
-              <p class="footer-text">Join our mailing list to receive the latest trailers, reviews and offers.</p>
-              <form class="newsletter-form mt-3">
-                <div class="input-group">
-                  <input type="email" class="form-control" placeholder="Enter your email" required>
-                  <button class="btn btn-primary" type="submit">Subscribe</button>
+            <div class="row g-4">
+                <!-- About Column -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <h3 class="footer-brand">ARK Movies</h3>
+                        <p class="footer-text">Your ultimate destination for movie discovery and entertainment. Find, track, and enjoy your favorite films and TV shows.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </form>
+                
+                <!-- Quick Links Column -->
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">Movies</a></li>
+                        <li><a href="#" class="footer-link">TV Shows</a></li>
+                        <li><a href="#" class="footer-link">Trending</a></li>
+                        <li><a href="#" class="footer-link">Upcoming</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources Column -->
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Feedback</a></li>
+                        <li><a href="#" class="footer-link">Developers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Column -->
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-text">Subscribe to get movie updates directly to your inbox.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-      
-          </div>
-      
-          <!-- Footer Bottom -->
-          <div class="footer-bottom mt-4 pt-3 border-top border-secondary text-center">
-            <p class="mb-0">&copy; <span id="currentYear"></span> ARK Movies. All rights reserved. | Designed for movie lovers 🍿</p>
-          </div>
+            
+            <!-- Copyright Section -->
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; <span id="currentYear"></span> ARK Movies. All rights reserved.</p>
+            </div>
         </div>
-      </footer>
-      
-      <script>
-        // Auto update year
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-      </script>
-      
+    </footer>
 
     <!-- Back to Top Button -->
-   
+    <div id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Custom JavaScript -->
     <script>
-        
         // Sample movie data
         const movies = [
             {
@@ -1058,7 +971,7 @@
                 year: 2008,
                 rating: 9.0,
                 genre: ["Action", "Crime", "Drama"],
-                poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
                 description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
             },
             {
@@ -1067,7 +980,7 @@
                 year: 2010,
                 rating: 8.8,
                 genre: ["Action", "Adventure", "Sci-Fi"],
-                poster: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
                 description: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
             },
             {
@@ -1076,7 +989,7 @@
                 year: 1994,
                 rating: 8.9,
                 genre: ["Crime", "Drama"],
-                poster: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
                 description: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
             },
             {
@@ -1085,7 +998,7 @@
                 year: 1994,
                 rating: 9.3,
                 genre: ["Drama"],
-                poster: "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
                 description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
             },
             {
@@ -1094,7 +1007,7 @@
                 year: 1972,
                 rating: 9.2,
                 genre: ["Crime", "Drama"],
-                poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
                 description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
             },
             {
@@ -1103,7 +1016,7 @@
                 year: 2014,
                 rating: 8.6,
                 genre: ["Adventure", "Drama", "Sci-Fi"],
-                poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
                 description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
             },
             {
@@ -1112,7 +1025,7 @@
                 year: 2019,
                 rating: 8.5,
                 genre: ["Comedy", "Drama", "Thriller"],
-                poster: "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
                 description: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
             },
             {
@@ -1121,7 +1034,7 @@
                 year: 2019,
                 rating: 8.4,
                 genre: ["Action", "Adventure", "Sci-Fi"],
-                poster: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg",
+                poster: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
                 description: "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
             }
         ];
@@ -1133,20 +1046,14 @@
             
             movieList.forEach(movie => {
                 const card = document.createElement('div');
-                card.className = 'col-lg-3 col-md-4 col-sm-6';
+                card.className = 'col-lg-3 col-md-4 col-sm-6 mb-4';
+                card.setAttribute('data-title', movie.title);
                 card.innerHTML = `
                     <div class="movie-card">
                         <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
                         <div class="movie-info">
                             <h5 class="movie-title">${movie.title}</h5>
-                            <div class="movie-meta">
-                                <span>${movie.year}</span>
-                                <span class="movie-rating"><i class="fas fa-star"></i> ${movie.rating}</span>
-                            </div>
-                            <div class="mb-2">
-                                ${movie.genre.map(g => `<span class="badge badge-genre">${g}</span>`).join('')}
-                            </div>
-                            <button class="btn btn-watch">Watch Now</button>
+                            <p class="card-text">${movie.year} • ${movie.genre[0]} • ⭐ ${movie.rating}</p>
                         </div>
                     </div>
                 `;
@@ -1167,6 +1074,21 @@
             document.getElementById('ratingFilter').addEventListener('change', filterMovies);
             document.getElementById('sortFilter').addEventListener('change', filterMovies);
             
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const movieCards = document.querySelectorAll('.movie-card');
+                
+                movieCards.forEach(card => {
+                    const title = card.parentElement.getAttribute('data-title').toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.parentElement.style.display = 'block';
+                    } else {
+                        card.parentElement.style.display = 'none';
+                    }
+                });
+            });
+            
             // Back to top button
             const backToTopButton = document.getElementById('backToTop');
             
@@ -1186,8 +1108,7 @@
             });
             
             // Update copyright year
-            document.querySelector('.footer .text-center p').innerHTML = 
-                `&copy; ${new Date().getFullYear()} CineVerse. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>`;
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
 
         // Filter movies function
@@ -1249,22 +1170,30 @@
             generateMovieCards(filteredMovies.slice(0, 4), 'popularMovies');
             generateMovieCards([...filteredMovies].sort((a, b) => b.rating - a.rating).slice(0, 4), 'topRatedMovies');
         }
+        
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.movie-slider');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            
+            // Calculate scroll amount based on movie card width
+            const scrollAmount = 270; // card width + gap
+            
+            nextBtn.addEventListener('click', function() {
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Enable/disable buttons based on scroll position
+            slider.addEventListener('scroll', function() {
+                prevBtn.disabled = slider.scrollLeft === 0;
+                nextBtn.disabled = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth;
+            });
+        });
     </script>
-   <style>
-    .footer-link:hover {
-  text-decoration: underline;
-  color: #f39c12 !important;
-}
-.footer-heading {
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-.footer-brand {
-  font-size: 1.8rem;
-}
-
-   </style>
-   
-  
 </body>
 </html>

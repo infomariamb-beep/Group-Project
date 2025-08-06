@@ -1,0 +1,1065 @@
+ 
+ 
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK Movies - Modern Movie Platform</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --accent-color: #ff4d4d;
+            --card-bg: #2a2a3c;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: var(--dark-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: calc(100% - 2rem);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://source.unsplash.com/random/1920x1080/?movie,theater') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,77,77,0.1) 0%, rgba(26,26,46,0.8) 100%);
+        }
+        
+        .hero-content {
+            z-index: 2;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .search-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .section-title:hover::after {
+            width: 100%;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .filter-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Movie Cards */
+        .movie-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .movie-poster {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .movie-card:hover .movie-poster {
+            transform: scale(1.05);
+        }
+        
+        .movie-info {
+            padding: 1.5rem;
+        }
+        
+        .movie-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .movie-rating {
+            color: #ffc107;
+            font-weight: 600;
+        }
+        
+        .badge-genre {
+            background-color: var(--primary-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .badge-genre:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(13, 110, 253, 0.3);
+        }
+        
+        .btn-watch {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+            width: 100%;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-watch:hover {
+            background-color: #e04444;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+        }
+        
+        /* Movie Slideshow */
+        .movie-slideshow {
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0;
+            background-color: var(--dark-color);
+        }
+        
+        .slider-controls {
+            display: flex;
+        }
+        
+        .slider-controls .btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-controls .btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        .movie-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+        }
+        
+        .movie-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .movie-slider::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .movie-slider::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        
+        .movie-slide {
+            flex: 0 0 auto;
+            width: 250px;
+            scroll-snap-align: start;
+        }
+        
+        .movie-slide .movie-card {
+            background: var(--card-bg);
+        }
+        
+        .movie-slide .movie-title {
+            color: white;
+        }
+        
+        .movie-slide .movie-meta {
+            color: #adb5bd;
+        }
+        
+        .movie-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .movie-slide .movie-card:hover .movie-overlay {
+            opacity: 1;
+        }
+        
+        .btn-play {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-play:hover {
+            background: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        .movie-slide .movie-rating {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #ffc107;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 0;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        }
+        
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer-text {
+            color: #adb5bd;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-heading:hover::after {
+            width: 60px;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-link {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-link:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+        }
+        
+        .newsletter-form .input-group {
+            margin-top: 1rem;
+        }
+        
+        .newsletter-form .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25);
+        }
+        
+        .newsletter-form .form-control::placeholder {
+            color: #adb5bd;
+        }
+        
+        .newsletter-form .btn {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form .btn:hover {
+            background-color: #e04444;
+            border-color: #e04444;
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .copyright-text {
+            color: #adb5bd;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .footer {
+                padding: 3rem 0 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .movie-slide {
+                width: 200px;
+            }
+            
+            .movie-poster {
+                height: 300px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-menu li {
+                margin-bottom: 0.6rem;
+            }
+            
+            .footer-heading {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .movie-slide {
+                width: 180px;
+            }
+            
+            .movie-poster {
+                height: 270px;
+            }
+            
+            .search-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+ 
+ 
+ <body>
+    
+    <section class="movie-slideshow" data-aos="fade-up">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title text-white">Now Playing</h2>
+                <div class="slider-controls">
+                    <button class="btn btn-outline-light slider-prev me-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light slider-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="movie-slider">
+                <!-- Slide 1 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Dune" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Dune: Part Two</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 46m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Kung Fu Panda 4" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Kung Fu Panda 4</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">1h 34m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" alt="Godzilla x Kong" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Godzilla x Kong</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">1h 55m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg" alt="The Fall Guy" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">The Fall Guy</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 6m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/ySgY4jBvZ6qchrxKnBg4M8tZp8V.jpg" alt="Furiosa" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.8
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Furiosa</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 28m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About Column -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <h3 class="footer-brand">ARK Movies</h3>
+                        <p class="footer-text">Your ultimate destination for movie discovery and entertainment. Find, track, and enjoy your favorite films and TV shows.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">Movies</a></li>
+                        <li><a href="#" class="footer-link">TV Shows</a></li>
+                        <li><a href="#" class="footer-link">Trending</a></li>
+                        <li><a href="#" class="footer-link">Upcoming</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources Column -->
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Feedback</a></li>
+                        <li><a href="#" class="footer-link">Developers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Column -->
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-text">Subscribe to get movie updates directly to your inbox.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Copyright Section -->
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; <span id="currentYear"></span> ARK Movies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+ </body>
+ 
+ 
+ <!-- Now Playing Slideshow -->
+
+
+
+ <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Sample movie data
+        const movies = [
+            {
+                id: 1,
+                title: "The Dark Knight",
+                year: 2008,
+                rating: 9.0,
+                genre: ["Action", "Crime", "Drama"],
+                poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+                description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+            },
+            {
+                id: 2,
+                title: "Inception",
+                year: 2010,
+                rating: 8.8,
+                genre: ["Action", "Adventure", "Sci-Fi"],
+                poster: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+                description: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
+            },
+            {
+                id: 3,
+                title: "Pulp Fiction",
+                year: 1994,
+                rating: 8.9,
+                genre: ["Crime", "Drama"],
+                poster: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                description: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+            },
+            {
+                id: 4,
+                title: "The Shawshank Redemption",
+                year: 1994,
+                rating: 9.3,
+                genre: ["Drama"],
+                poster: "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+                description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+            },
+            {
+                id: 5,
+                title: "The Godfather",
+                year: 1972,
+                rating: 9.2,
+                genre: ["Crime", "Drama"],
+                poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+            },
+            {
+                id: 6,
+                title: "Interstellar",
+                year: 2014,
+                rating: 8.6,
+                genre: ["Adventure", "Drama", "Sci-Fi"],
+                poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+                description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+            },
+            {
+                id: 7,
+                title: "Parasite",
+                year: 2019,
+                rating: 8.5,
+                genre: ["Comedy", "Drama", "Thriller"],
+                poster: "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+                description: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
+            },
+            {
+                id: 8,
+                title: "Avengers: Endgame",
+                year: 2019,
+                rating: 8.4,
+                genre: ["Action", "Adventure", "Sci-Fi"],
+                poster: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg",
+                description: "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
+            }
+        ];
+
+        // Function to generate movie cards
+        function generateMovieCards(movieList, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            movieList.forEach(movie => {
+                const card = document.createElement('div');
+                card.className = 'col-lg-3 col-md-4 col-sm-6 mb-4';
+                card.innerHTML = `
+                    <div class="movie-card h-100">
+                        <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
+                        <div class="movie-info">
+                            <h5 class="movie-title">${movie.title}</h5>
+                            <div class="movie-meta">
+                                <span>${movie.year}</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> ${movie.rating}</span>
+                            </div>
+                            <div class="mb-2">
+                                ${movie.genre.map(g => `<span class="badge badge-genre">${g}</span>`).join('')}
+                            </div>
+                            <button class="btn btn-watch">Watch Now</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize movie sections
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load movies into different sections
+            generateMovieCards(movies.slice(0, 4), 'trendingMovies');
+            generateMovieCards(movies.slice(2, 6), 'popularMovies');
+            generateMovieCards([...movies].sort((a, b) => b.rating - a.rating).slice(0, 4), 'topRatedMovies');
+            
+            // Filter functionality
+            document.getElementById('genreFilter').addEventListener('change', filterMovies);
+            document.getElementById('yearFilter').addEventListener('change', filterMovies);
+            document.getElementById('ratingFilter').addEventListener('change', filterMovies);
+            document.getElementById('sortFilter').addEventListener('change', filterMovies);
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+                
+                // Add scrolled class to navbar
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Update copyright year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+
+        // Filter movies function
+        function filterMovies() {
+            const genreFilter = document.getElementById('genreFilter').value;
+            const yearFilter = document.getElementById('yearFilter').value;
+            const ratingFilter = document.getElementById('ratingFilter').value;
+            const sortFilter = document.getElementById('sortFilter').value;
+            
+            let filteredMovies = [...movies];
+            
+            // Apply genre filter
+            if (genreFilter !== 'All Genres') {
+                filteredMovies = filteredMovies.filter(movie => 
+                    movie.genre.includes(genreFilter)
+                );
+            }
+            
+            // Apply year filter
+            if (yearFilter !== 'All Years') {
+                if (yearFilter.includes('-')) {
+                    const [start, end] = yearFilter.split('-').map(Number);
+                    filteredMovies = filteredMovies.filter(movie => 
+                        movie.year >= start && movie.year <= end
+                    );
+                } else {
+                    filteredMovies = filteredMovies.filter(movie => 
+                        movie.year === parseInt(yearFilter)
+                    );
+                }
+            }
+            
+            // Apply rating filter
+            if (ratingFilter !== 'All Ratings') {
+                const minRating = parseFloat(ratingFilter);
+                filteredMovies = filteredMovies.filter(movie => 
+                    movie.rating >= minRating
+                );
+            }
+            
+            // Apply sort filter
+            switch (sortFilter) {
+                case 'Newest':
+                    filteredMovies.sort((a, b) => b.year - a.year);
+                    break;
+                case 'Highest Rated':
+                    filteredMovies.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'Alphabetical':
+                    filteredMovies.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                default: // Popularity (default)
+                    // In a real app, this would use actual popularity data
+                    filteredMovies.sort((a, b) => b.rating - a.rating);
+            }
+            
+            // Update all sections with filtered movies
+            generateMovieCards(filteredMovies.slice(0, 4), 'trendingMovies');
+            generateMovieCards(filteredMovies.slice(0, 4), 'popularMovies');
+            generateMovieCards([...filteredMovies].sort((a, b) => b.rating - a.rating).slice(0, 4), 'topRatedMovies');
+        }
+
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.movie-slider');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            
+            // Calculate scroll amount based on movie card width
+            const scrollAmount = 270; // card width + gap
+            
+            nextBtn.addEventListener('click', function() {
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Enable/disable buttons based on scroll position
+            slider.addEventListener('scroll', function() {
+                prevBtn.disabled = slider.scrollLeft === 0;
+                nextBtn.disabled = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth;
+            });
+        });
+    </script>

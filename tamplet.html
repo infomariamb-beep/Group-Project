@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineVerse - Modern Movie Platform</title>
+    <title>ARK Movies - Modern Movie Platform</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Spider-Man Style Navbar */
         .navbar.spiderman {
@@ -57,7 +59,9 @@
             --dark-color: #1a1a2e;
             --light-color: #f8f9fa;
             --accent-color: #ff4d4d;
+            --card-bg: #2a2a3c;
         }
+<<<<<<< HEAD
 
         /* Hero Section Styles */
         .hero-section {
@@ -74,6 +78,81 @@
             background-size: cover;
             position: relative;
         }
+=======
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: var(--dark-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: calc(100% - 2rem);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+<<<<<<< HEAD
+    background: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.95) 20%, rgba(139, 0, 0, 0.6) 100%),
+        url('https://source.unsplash.com/1920x1080/?cinema,netflix') no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
 
         .hero-section::before {
             content: "";
@@ -84,26 +163,77 @@
             z-index: 0;
         }
 
+<<<<<<< HEAD
+=======
+
+=======
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://source.unsplash.com/random/1920x1080/?movie,theater') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,77,77,0.1) 0%, rgba(26,26,46,0.8) 100%);
+        }
+>>>>>>> a054c38d8d090f7251cd033ab0bf41d2e0184886
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .hero-content {
             flex: 1;
             min-width: 320px;
             max-width: 500px;
             z-index: 2;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .hero-title {
+<<<<<<< HEAD
             font-size: 3.8rem;
             font-weight: 800;
             color: #ffcc00;
             text-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
             margin-bottom: 25px;
+=======
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         }
 
         .hero-subtitle {
+<<<<<<< HEAD
             font-size: 1.3rem;
             color: #eeeeeecc;
             margin-bottom: 30px;
             line-height: 1.7;
+=======
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         }
 
         /* Slider styles */
@@ -166,9 +296,22 @@
             padding: 30px;
             border-radius: 16px;
             backdrop-filter: blur(10px);
+<<<<<<< HEAD
             box-shadow: 0 0 25px rgba(255, 204, 0, 0.1);
             color: #fff;
             margin-bottom: 40px;
+=======
+            border-radius: 10px;
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 5rem 0;
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         }
 
         .filter-title {
@@ -352,8 +495,13 @@
             display: inline-block;
             color: white;
         }
+<<<<<<< HEAD
 
         .section-title:after {
+=======
+        
+        .section-title::after {
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
             content: '';
             position: absolute;
             left: 0;
@@ -361,16 +509,244 @@
             width: 50px;
             height: 3px;
             background: var(--accent-color);
+            transition: width 0.3s ease;
         }
+<<<<<<< HEAD
 
         /* Footer Styles */
+=======
+        
+        .section-title:hover::after {
+            width: 100%;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .filter-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Movie Cards */
+        .movie-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .movie-poster {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .movie-card:hover .movie-poster {
+            transform: scale(1.05);
+        }
+        
+        .movie-info {
+            padding: 1.5rem;
+        }
+        
+        .movie-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .movie-rating {
+            color: #ffc107;
+            font-weight: 600;
+        }
+        
+        .badge-genre {
+            background-color: var(--primary-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .badge-genre:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(13, 110, 253, 0.3);
+        }
+        
+        .btn-watch {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+            width: 100%;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-watch:hover {
+            background-color: #e04444;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+        }
+        
+        /* Movie Slideshow */
+        .movie-slideshow {
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0;
+            background-color: var(--dark-color);
+        }
+        
+        .slider-controls {
+            display: flex;
+        }
+        
+        .slider-controls .btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-controls .btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        .movie-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+        }
+        
+        .movie-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .movie-slider::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .movie-slider::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        
+        .movie-slide {
+            flex: 0 0 auto;
+            width: 250px;
+            scroll-snap-align: start;
+        }
+        
+        .movie-slide .movie-card {
+            background: var(--card-bg);
+        }
+        
+        .movie-slide .movie-title {
+            color: white;
+        }
+        
+        .movie-slide .movie-meta {
+            color: #adb5bd;
+        }
+        
+        .movie-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .movie-slide .movie-card:hover .movie-overlay {
+            opacity: 1;
+        }
+        
+        .btn-play {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-play:hover {
+            background: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        .movie-slide .movie-rating {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #ffc107;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer {
             background-color: var(--dark-color);
             color: white;
             padding: 4rem 0 0;
             position: relative;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer::before {
             content: '';
             position: absolute;
@@ -380,7 +756,11 @@
             height: 2px;
             background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-brand {
             font-size: 1.8rem;
             font-weight: 700;
@@ -389,17 +769,29 @@
             display: inline-block;
             transition: all 0.3s ease;
         }
+<<<<<<< HEAD
 
         .footer-brand:hover {
             transform: scale(1.05);
         }
 
+=======
+        
+        .footer-brand:hover {
+            transform: scale(1.05);
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-text {
             color: #adb5bd;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-heading {
             font-size: 1.2rem;
             font-weight: 600;
@@ -408,7 +800,11 @@
             position: relative;
             padding-bottom: 0.5rem;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-heading::after {
             content: '';
             position: absolute;
@@ -419,27 +815,44 @@
             background-color: var(--accent-color);
             transition: width 0.3s ease;
         }
+<<<<<<< HEAD
 
         .footer-heading:hover::after {
             width: 60px;
         }
 
+=======
+        
+        .footer-heading:hover::after {
+            width: 60px;
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-menu {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+<<<<<<< HEAD
 
         .footer-menu li {
             margin-bottom: 0.8rem;
         }
 
+=======
+        
+        .footer-menu li {
+            margin-bottom: 0.8rem;
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-link {
             color: #adb5bd;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
         }
+<<<<<<< HEAD
 
         .footer-link:hover {
             color: #f39c12 !important;
@@ -447,12 +860,24 @@
             transform: translateX(5px);
         }
 
+=======
+        
+        .footer-link:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 1.5rem;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -464,58 +889,98 @@
             color: #fff;
             transition: all 0.3s ease;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .social-link:hover {
             background-color: var(--accent-color);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
         }
+<<<<<<< HEAD
 
         .newsletter-form .input-group {
             margin-top: 1rem;
         }
 
+=======
+        
+        .newsletter-form .input-group {
+            margin-top: 1rem;
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .newsletter-form .form-control {
             background-color: rgba(255, 255, 255, 0.1);
             border: none;
             color: #fff;
             transition: all 0.3s ease;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .newsletter-form .form-control:focus {
             background-color: rgba(255, 255, 255, 0.2);
             box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25);
         }
+<<<<<<< HEAD
 
         .newsletter-form .form-control::placeholder {
             color: #adb5bd;
         }
 
+=======
+        
+        .newsletter-form .form-control::placeholder {
+            color: #adb5bd;
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .newsletter-form .btn {
             background-color: var(--accent-color);
             border-color: var(--accent-color);
             transition: all 0.3s ease;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .newsletter-form .btn:hover {
             background-color: #e04444;
             border-color: #e04444;
             transform: translateY(-2px);
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 1.5rem;
             margin-top: 3rem;
             text-align: center;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .copyright-text {
             color: #adb5bd;
             margin: 0;
             font-size: 0.9rem;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -539,11 +1004,16 @@
         .back-to-top.show {
             opacity: 1;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
         }
+<<<<<<< HEAD
 
         /* Responsive Styles */
         @media (max-width: 992px) {
@@ -561,6 +1031,20 @@
             }
         }
 
+=======
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .footer {
+                padding: 3rem 0 0;
+            }
+        }
+        
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.2rem;
@@ -570,36 +1054,119 @@
                 font-size: 1rem;
             }
             
+<<<<<<< HEAD
+=======
+            .movie-slide {
+                width: 200px;
+            }
+            
+            .movie-poster {
+                height: 300px;
+            }
+            
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
             .section-title {
                 font-size: 1.5rem;
             }
             
+<<<<<<< HEAD
             .movie-slide {
                 width: 200px;
+=======
+            .footer-menu li {
+                margin-bottom: 0.6rem;
+            }
+            
+            .footer-heading {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .movie-slide {
+                width: 180px;
+            }
+            
+            .movie-poster {
+                height: 270px;
+            }
+            
+            .search-box {
+                padding: 1.5rem;
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top spiderman">
         <div class="container">
+<<<<<<< HEAD
             <a class="navbar-brand" href="#">🎬 CineVerse</a>
+=======
+          <a class="navbar-brand" href="#">🎬 CineVerse</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#a">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#b">Movies</a></li>
+              <li class="nav-item"><a class="nav-link" href="#b">TV Shows</a></li>
+              <li class="nav-item"><a class="nav-link" href="#b">Genres</a></li>
+            </ul>
+            <div class="ms-3 d-flex">
+              <button class="btn btn-outline-light me-2">Login</button>
+              <button class="btn btn-danger">Sign Up</button>
+=======
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ARK Movies</a>
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+<<<<<<< HEAD
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#a">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#b">Movies</a></li>
                     <li class="nav-item"><a class="nav-link" href="#b">TV Shows</a></li>
                     <li class="nav-item"><a class="nav-link" href="#b">Genres</a></li>
+=======
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Genres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
                 </ul>
                 <div class="ms-3 d-flex">
                     <button class="btn btn-outline-light me-2">Login</button>
                     <button class="btn btn-danger">Sign Up</button>
                 </div>
+<<<<<<< HEAD
+=======
+>>>>>>> a054c38d8d090f7251cd033ab0bf41d2e0184886
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
             </div>
         </div>
     </nav>
@@ -649,9 +1216,16 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </section>
 
     <script>
+=======
+<<<<<<< HEAD
+      </section>
+    
+      <script id="b">
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         const sliderWrapper = document.getElementById('sliderWrapper');
         let scrollAmount = 0;
         let direction = 1;
@@ -864,6 +1438,224 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
+=======
+    </style>
+      <!-- JS -->
+      <script>
+        const searchInput = document.getElementById("searchInput");
+    
+        searchInput.addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+          const movieCards = document.querySelectorAll(".movie-card");
+    
+          movieCards.forEach(card => {
+            const title = card.getAttribute("data-title").toLowerCase();
+            if (title.includes(searchTerm)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+=======
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Filter Section -->
+            <div class="filter-section" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <h6 class="filter-title">Genre</h6>
+                        <select class="form-select" id="genreFilter">
+                            <option selected>All Genres</option>
+                            <option>Action</option>
+                            <option>Adventure</option>
+                            <option>Comedy</option>
+                            <option>Drama</option>
+                            <option>Horror</option>
+                            <option>Sci-Fi</option>
+                            <option>Thriller</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h6 class="filter-title">Year</h6>
+                        <select class="form-select" id="yearFilter">
+                            <option selected>All Years</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                            <option>2020</option>
+                            <option>2010-2019</option>
+                            <option>2000-2009</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h6 class="filter-title">Rating</h6>
+                        <select class="form-select" id="ratingFilter">
+                            <option selected>All Ratings</option>
+                            <option>9+</option>
+                            <option>8+</option>
+                            <option>7+</option>
+                            <option>6+</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h6 class="filter-title">Sort By</h6>
+                        <select class="form-select" id="sortFilter">
+                            <option selected>Popularity</option>
+                            <option>Newest</option>
+                            <option>Highest Rated</option>
+                            <option>Alphabetical</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Movies -->
+            <section class="mb-5" data-aos="fade-up">
+                <h2 class="section-title">Trending Now</h2>
+                <div class="row" id="trendingMovies">
+                    <!-- Movie cards will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Popular Movies -->
+            <section class="mb-5" data-aos="fade-up">
+                <h2 class="section-title">Popular Movies</h2>
+                <div class="row" id="popularMovies">
+                    <!-- Movie cards will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Top Rated Movies -->
+            <section class="mb-5" data-aos="fade-up">
+                <h2 class="section-title">Top Rated</h2>
+                <div class="row" id="topRatedMovies">
+                    <!-- Movie cards will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Now Playing Slideshow -->
+    <section class="movie-slideshow" data-aos="fade-up">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title text-white">Now Playing</h2>
+                <div class="slider-controls">
+                    <button class="btn btn-outline-light slider-prev me-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light slider-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="movie-slider">
+                <!-- Slide 1 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Dune" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Dune: Part Two</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 46m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Kung Fu Panda 4" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Kung Fu Panda 4</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">1h 34m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" alt="Godzilla x Kong" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Godzilla x Kong</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">1h 55m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="movie-slide">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg" alt="The Fall Guy" class="img-fluid">
+                            <div class="movie-overlay">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">The Fall Guy</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2024</span>
+                                <span class="movie-duration">2h 6m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
                 <!-- Slide 5 -->
                 <div class="movie-slide">
                     <div class="movie-card">
@@ -886,15 +1678,51 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     
+=======
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
                 </div>
             </div>
         </div>
     </section>
+<<<<<<< HEAD
+=======
+>>>>>>> a054c38d8d090f7251cd033ab0bf41d2e0184886
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          <div class="row g-4">
+            
+            <!-- Brand Description -->
+            <div class="col-lg-4 col-md-6">
+              <h3 class="footer-brand text-primary fw-bold">🎬 CineVerse</h3>
+              <p class="footer-text">Explore a universe of cinema. Stream, track, and dive into the world’s best movies and series — all in one place.</p>
+              <div class="social-links mt-3">
+                <a href="#" class="social-link me-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link me-2 text-light"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link me-2 text-light"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link text-light"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+      
+            <!-- Navigation Links -->
+            <div class="col-lg-2 col-md-6">
+              <h5 class="footer-heading">Explore</h5>
+              <ul class="list-unstyled footer-menu">
+                <li><a href="#" class="footer-link text-light">Home</a></li>
+                <li><a href="#" class="footer-link text-light">Movies</a></li>
+                <li><a href="#" class="footer-link text-light">TV Shows</a></li>
+                <li><a href="#" class="footer-link text-light">Trending</a></li>
+                <li><a href="#" class="footer-link text-light">Top Rated</a></li>
+              </ul>
+=======
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
             <div class="row g-4">
                 <!-- About Column -->
                 <div class="col-lg-4 col-md-6">
@@ -943,6 +1771,37 @@
                             <button class="btn btn-primary" type="submit">Subscribe</button>
                         </div>
                     </form>
+<<<<<<< HEAD
+=======
+                </div>
+            </div>
+            
+            <!-- Copyright Section -->
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; <span id="currentYear"></span> ARK Movies. All rights reserved.</p>
+>>>>>>> a054c38d8d090f7251cd033ab0bf41d2e0184886
+            </div>
+      
+            <!-- Help & Resources -->
+            <div class="col-lg-2 col-md-6">
+              <h5 class="footer-heading">Support</h5>
+              <ul class="list-unstyled footer-menu">
+                <li><a href="#" class="footer-link text-light">Help Center</a></li>
+                <li><a href="#" class="footer-link text-light">Account</a></li>
+                <li><a href="#" class="footer-link text-light">Privacy Policy</a></li>
+                <li><a href="#" class="footer-link text-light">Terms of Use</a></li>
+              </ul>
+            </div>
+      
+            <!-- Newsletter -->
+            <div class="col-lg-4 col-md-6">
+              <h5 class="footer-heading">Get Updates</h5>
+              <p class="footer-text">Join our mailing list to receive the latest trailers, reviews and offers.</p>
+              <form class="newsletter-form mt-3">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Enter your email" required>
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
                 </div>
             </div>
             
@@ -960,9 +1819,25 @@
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom JavaScript -->
     <script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        
+=======
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+>>>>>>> a054c38d8d090f7251cd033ab0bf41d2e0184886
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         // Sample movie data
         const movies = [
             {
@@ -1047,9 +1922,12 @@
             movieList.forEach(movie => {
                 const card = document.createElement('div');
                 card.className = 'col-lg-3 col-md-4 col-sm-6 mb-4';
+<<<<<<< HEAD
                 card.setAttribute('data-title', movie.title);
+=======
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
                 card.innerHTML = `
-                    <div class="movie-card">
+                    <div class="movie-card h-100">
                         <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
                         <div class="movie-info">
                             <h5 class="movie-title">${movie.title}</h5>
@@ -1097,6 +1975,13 @@
                     backToTopButton.classList.add('show');
                 } else {
                     backToTopButton.classList.remove('show');
+                }
+                
+                // Add scrolled class to navbar
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
                 }
             });
             
@@ -1170,7 +2055,11 @@
             generateMovieCards(filteredMovies.slice(0, 4), 'popularMovies');
             generateMovieCards([...filteredMovies].sort((a, b) => b.rating - a.rating).slice(0, 4), 'topRatedMovies');
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> f05a83a72cc0a1cb734a0de8d334d2f8d9cdb8be
         // Slideshow functionality
         document.addEventListener('DOMContentLoaded', function() {
             const slider = document.querySelector('.movie-slider');
